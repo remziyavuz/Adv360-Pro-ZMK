@@ -10,6 +10,13 @@
         #include "macros.dtsi"
       #include "version.dtsi"
 
+        swapped_quote: swapped_quote {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DOUBLE_QUOTES>, <&kp APOS>;
+            label = "SWAPPED_QUOTE";
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -22,12 +29,6 @@
     };
 
     macros {
-        swapped_quote: swapped_quote {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp DOUBLE_QUOTES &kp APOS>;
-            label = "SWAPPED_QUOTE";
-        };
     };
 
     keymap {
